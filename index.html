@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Citylink</title>
+</head>
+<body>
+<div id="app">
+    <header v-if="page !== 'login' && page !== 'register'" class="header">
+        <div class="header__content flex">
+            <div class="header__nav">
+                <ul class="topmenu">
+                    <li><a href="">Собрать компьютер</a></li>
+                    <li><a href="" class="down">Добавить комплектующие</a>
+                        <ul class="submenu">
+                            <li><a @click="$root.changePage('motherboard')">Материнские платы</a></li>
+                            <li><a @click="$root.changePage('power')">Питание</a></li>
+                            <li><a @click="$root.changePage('graphic')">Видеокарты</a></li>
+                            <li><a @click="$root.changePage('store')">Хранение</a></li>
+                            <li><a @click="$root.changePage('memory')">Память</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="header__logo">
+                <a @click="$root.changePage('home')" style="text-decoration: none; cursor: pointer;"><span>Make Pc</span></a>
+            </div>
+            <nav class="header__user flex">
+                <a href="#" @click="$root.changePage('register')">Регистрация</a>
+                <a href="#" @click="$root.changePage('login')">Вход</a>
+            </nav>
+        </div>
+    </header>
+    <Home v-if="page === 'home'"></Home>
+    <Register v-if="page === 'register'"></Register>
+    <Login v-if="page === 'login'"></Login>
+    <Motherboard v-if="page === 'motherboard'"></Motherboard>
+</div>
+<script src="assets/js/vue.min.js"></script>
+<script src="assets/js/index.js" type="module"></script>
+</body>
+</html>
