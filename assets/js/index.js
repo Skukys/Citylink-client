@@ -13,6 +13,7 @@ window.app = new Vue({
       page: 'home',
       brands:[],
       socket: [],
+      ram: [],
     }
   },
   components: {
@@ -30,6 +31,8 @@ window.app = new Vue({
       this.brands = brand.json.body.brands
       let socket = await request('GET', '/socket')
       this.socket = socket.json.body.sockets
+      let ram = await request('GET', '/ram')
+      this.ram = ram.json.body.ramTypes
     }
   }
 })

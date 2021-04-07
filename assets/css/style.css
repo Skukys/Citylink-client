@@ -291,3 +291,63 @@ nav a {
     height: 100%;
     object-fit: cover;
 }
+.detail-form__title{
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+.detail-form__form{
+    width: 400px;
+}
+.detail-form__form input[type='text']{
+    outline: none;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    margin: 10px 0;
+    background: #1c222a;
+    color: #ccc;
+    transition: .3s;
+    border-bottom: 1px solid #585858;
+    width: 100%;
+}
+.detail-form__form input[type='text']:focus{
+    border-bottom: 1px solid #ccc;
+}
+.detail-form__form button{
+    background: #edb021;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    transition: .3s;
+    width: 100%;
+}
+.detail-form__form button:hover{
+    background: #fdc954;
+}
+.detail-form__form select{
+    background: #1c222a;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    color: #ccc;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.detail-form__file{
+    height: 150px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.detail-form{
+    margin-top: 50px;
+}
+.detail-form input[type='file']{
+    display: none;
+}
