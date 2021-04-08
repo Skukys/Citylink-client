@@ -14,7 +14,7 @@
         <div class="header__content flex">
             <div class="header__nav">
                 <ul class="topmenu">
-                    <li><a href="">Собрать компьютер</a></li>
+                    <li><a style="cursor:pointer;" @click="$root.changePage('make')">Собрать компьютер</a></li>
                     <li><a href="" class="down">Добавить комплектующие</a>
                         <ul class="submenu">
                             <li><a @click="$root.changePage('motherboard')">Материнские платы</a></li>
@@ -22,6 +22,7 @@
                             <li><a @click="$root.changePage('graphic')">Видеокарты</a></li>
                             <li><a @click="$root.changePage('store')">Хранение</a></li>
                             <li><a @click="$root.changePage('memory')">Память</a></li>
+                            <li><a @click="$root.changePage('processor')">Процессор</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -38,7 +39,12 @@
     <Home v-if="page === 'home'"></Home>
     <Register v-if="page === 'register'"></Register>
     <Login v-if="page === 'login'"></Login>
+
     <Motherboard v-if="page === 'motherboard'"></Motherboard>
+    <Processor v-if="page === 'processor'"></Processor>
+    <Memory v-if="page === 'memory'"></Memory>
+    <Storage v-if="page === 'store'"></Storage>
+    <Make v-if="page === 'make'"></Make>
 </div>
 <script src="assets/js/vue.min.js"></script>
 <script src="assets/js/index.js" type="module"></script>

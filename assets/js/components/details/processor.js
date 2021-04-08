@@ -10,20 +10,18 @@ export default {
         name: 'B550-A Pro',
         brand: 18,
         socket: 33,
-        ram: 4,
-        ramSlots: 4,
-        tdp: 95,
-        sata: 3,
-        m2: 2,
-        pci: 2,
-        image: null
+        maxChast: 95,
+        baseChast: 2,
+        yad: 2,
+        cash: 2,
+        tdp: 2,
+        image: null,
       },
     }
   },
   mounted() {
     this.brands = this.$root.brands
     this.sockets = this.$root.socket
-    this.ram = this.$root.ram
     let file = document.querySelector('#file')
     let fileInput = document.querySelector('#fileInput')
 
@@ -34,7 +32,7 @@ export default {
   methods:{
     async createDetail(){
       this.detail.image = document.querySelector('#file').files[0]
-      let res = await request('POST', '/motherboard', this.detail, true)
+      let res = await request('POST', '/processor', this.detail, true)
     }
   },
   //language=vue
@@ -60,35 +58,29 @@ export default {
           </label>
           <label>
             Socket:
-            <select name="socket" id="socket" v-model="detail.socket">
+            <select name="brand" id="brand" v-model="detail.socket">
               <option v-for="socket in sockets" :value="socket.id">{{socket.name}}</option>
             </select>
           </label>
           <label>
-            Ram-type:
-            <select name="ram" id="ram" v-model="detail.ram">
-              <option v-for="item in ram" :value="item.id">{{item.name}}</option>
-            </select>
+            Base:
+            <input type="text" placeholder="PCI slots" v-model="detail.baseChast">
           </label>
           <label>
-            Ram-slots:
-            <input type="text" placeholder="Slots" v-model="detail.ramSlots">
+            Max:
+            <input type="text" placeholder="PCI slots" v-model="detail.maxChast">
           </label>
           <label>
-            Max TDP:
-            <input type="text" placeholder="Max TDP" v-model="detail.tdp">
+            Yad:
+            <input type="text" placeholder="PCI slots" v-model="detail.yad">
           </label>
           <label>
-            Sata slots: 
-            <input type="text" placeholder="SATA slots" v-model="detail.sata">
+            Cash:
+            <input type="text" placeholder="PCI slots" v-model="detail.cash">
           </label>
           <label>
-            M2 slots:
-            <input type="text" placeholder="M2" v-model="detail.m2">
-          </label>
-          <label>
-            Pci slots:
-            <input type="text" placeholder="PCI slots" v-model="detail.pci">
+            Tdp:
+            <input type="text" placeholder="PCI slots" v-model="detail.tdp">
           </label>
           <button @click="createDetail">Добавить</button>
         </div>
